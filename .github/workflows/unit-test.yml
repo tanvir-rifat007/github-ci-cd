@@ -45,6 +45,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: dist
 
   coverage:
     runs-on: ubuntu-latest
