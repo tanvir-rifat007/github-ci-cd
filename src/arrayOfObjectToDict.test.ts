@@ -6,7 +6,7 @@ interface Person {
   age: number;
 }
 
-interface Dict<T> {
+interface Dict {
   [key: string]: Pick<Person, "name" | "age">;
 }
 
@@ -19,8 +19,8 @@ const arrayOfObjectToDict = <
   T extends { id: string; name: string; age: number }
 >(
   persons: T[]
-): Dict<T> => {
-  let dict: Dict<T> = {};
+): Dict => {
+  let dict: Dict = {};
 
   persons.forEach((person) => {
     dict[person.id] = {
